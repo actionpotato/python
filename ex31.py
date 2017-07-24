@@ -22,7 +22,7 @@ elif door == "2":
     print "You stare into the endless abyss at Cthulhu's retina."
     print "1. Blueberries."
     print "2. Yellow jacket clothespins."
-    print "3. understanding revolvers yelling melodies."
+    print "3. Understanding revolvers yelling melodies."
 
     insanity = raw_input("> ")
 
