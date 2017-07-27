@@ -10,15 +10,19 @@ import time
 # need a while loop here to cycle through the battle
 
 while True:
+    fight_dragon()
+
+
+
+
+
+def fight_dragon():
 # This is how I will calculate the D20 values:
     dice_roll = (randint(1,20))
     d20 = int(dice_roll)
-
     print "You rolled %d "% dice_roll
-
 # Start the dragon with no damage
     dragon_damage = 0
-
     if d20 == 1:
         print "CRITICAL FAILURE! Talk about whiffing it!"
     #dead()
