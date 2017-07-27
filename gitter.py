@@ -7,6 +7,6 @@ import subprocess
 
 message = raw_input("Enter commit message: ")
 
-print subprocess.check_call(["git", "add", "-A"])
+print subprocess.call(["git", "add", "-A"])
 
-print subprocess.check_call(['git', 'commit', '-m', message])
+print subprocess.call(['git', 'commit', '-m', message])
