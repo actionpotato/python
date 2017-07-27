@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 # commit git files.
+# There is a better way to do this, but I want to practice Understanding
+# subprocess
 
 import subprocess
 
