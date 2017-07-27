@@ -3,13 +3,18 @@
 from random import randint
 from sys import exit
 
+import time
+
 # This is how I will calculate the D20 values:
 dice_roll = (randint(1,20))
 d20 = int(dice_roll)
 
 # while True
+# need a while loop here to cycle through the battle
 
 print "You rolled %d "% dice_roll
+
+# Start the dragon with no damage
 dragon_damage = 0
 
 if d20 == 1:
