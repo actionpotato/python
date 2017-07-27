@@ -10,6 +10,7 @@ d20 = int(dice_roll)
 # while True
 
 print "You rolled %d "% dice_roll
+dragon_damage = 0
 
 if d20 == 1:
     print "CRITICAL FAILURE! Talk about whiffing it!"
@@ -22,12 +23,13 @@ if d20 < 10:
     #dragon()
 if d20 <= 15:
     print "Hit! you do damage!"
-    #dragon()
+    #dragon() ++dragon_damage
 if d20 <= 19:
     print "You hit HARD!"
-
+    #dragon() ++dragon_damage X2
 if d20 == 20:
     print "Natural 20? instant kill!!!"
+    #killed_dragon()
 else:
     print "That isn't supposed to happen... You find a glorkum.s"
     exit(0)
