@@ -68,46 +68,50 @@ def fight_dragon():
 # Start the dragon with no damage
     dragon_damage = 0
 
-    while dragon_damage < 7:
+    while dragon_damage <= 7:
         if d20 == 1:
             print "CRITICAL FAILURE! Talk about whiffing it!"
             time.sleep(1)
             print "You stumble... and the dragon eats you."
+            dragon_damage = dragon_damage
             print "Dragon Damage is %d" % dragon_damage
             exit(0)
+
         if d20 < 5:
             print "Wow, talk about a miss!"
             time.sleep(1)
             print "Dragon Damage is %d" % dragon_damage
+            dragon_damage = dragon_damage
             fight_dragon()
-        # exit(0)
+
         if d20 < 10:
             print "you missed, but barely stay upright."
             time.sleep(1)
+            dragon_damage = dragon_damage
             print "Dragon Damage is %d" % dragon_damage
             fight_dragon()
-        # exit(0)
+
         if d20 <= 15:
             print "Hit! you do damage!"
-            dragon_damage += 1
             time.sleep(1)
+            dragon_damage = dragon_damage + 1
             print "Dragon Damage is %d" % dragon_damage
             fight_dragon()
 
         if d20 <= 18:
             print "You hit HARD!"
-    #dragon() ++dragon_damage X3
-            dragon_damage += 3
+            time.sleep(1)
+            dragon_damage = dragon_damage + 3
             print "Dragon Damage is %d" % dragon_damage
             fight_dragon()
+
         if d20 == 20:
             print "Natural 20? instant kill!!!"
-    #killed_dragon()
-            dragon_damage = 10
-            print dragon_damage
+            dragon_damage = dragon_damage + 10
+            print "Dragon Damage is %d" % dragon_damage
             print "You won!"
             exit(0)
+
         else:
             print "That isn't supposed to happen... You find a glorkum.s"
             exit(0)
-#
