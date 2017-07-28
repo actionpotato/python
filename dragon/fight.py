@@ -1,15 +1,53 @@
 from random import randint
+from sys import exit
+import time
+import os
 
+def first_view():
+    """This is the first area that the user encounters."""
+    os.system('clear')
+    print "You stand in a grassy field. There is a hole in the ground in front of you."
+    print "Options are, look, down, or leave."
 
-def first_room():
-    print "You enter the room... exits are North"
+    enter_dungeon = False
+
     while True:
         user_input = raw_input("> ")
+        if user_input == "look":
+            os.system('clear')
+            print "It is a bright sunny day blue skies... and a dark and dreary hole in the ground lies before you."
+            time.sleep(4)
+            first_view()
+        if user_input == "leave":
+            print "You flee quickly!"
+            exit (0)
+        if user_input == "down":
+            print "You climb down into the hole and find..."
+            first_room()
+        if user_input == "exit":
+            exit(0)
+        else:
+            print "Command not understood."
+            first_view()
 
+def first_room():
+    print "You are standing in a square room."
+    print "Exits are North, up."
+    enter_dungeon = False
+
+    while True:
+        user_input = raw_input("> ")
+        if user_input == "look":
+            first_room()
         if user_input == "North":
             fight_dragon()
+        if user_input == "up":
+            first_view()
+        if user_input == "exit":
+            exit(0)
         else:
-            print "lets get the hell out of here!"
+            print "Command not understood."
+            first_room()
 
 def fight_monster(dice_roll):
     """This function is for a fight with a monster - it is D20 based"""
@@ -19,15 +57,11 @@ def fight_monster(dice_roll):
     d20 = int(dice_roll)
     return d20
 
-def break_words(stuff):
-    """see if this imports properly"""
-    words = stuff.split(' ')
-    return words
-
 def fight_dragon():
 # This is how I will calcudice_roll = (randint(1,20))
     dice_roll = (randint(1,20))
     d20 = int(dice_roll)
+    fight_monster(dice_roll)
     print "You rolled %d "% dice_roll
 # Start the dragon with no damage
     dragon_damage = 0

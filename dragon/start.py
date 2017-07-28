@@ -5,6 +5,7 @@ from sys import exit
 import time
 from fight import fight_dragon
 from fight import first_room
+from fight import first_view
 
 while True:
-    first_room()
+    first_view()
