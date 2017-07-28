@@ -1,21 +1,22 @@
-#!/usr/bin/env python
-
 from random import randint
-from sys import exit
 
-import time
+def fight_monster(dice_roll):
+    """This function is for a fight with a monster - it is D20 based"""
+    # This is how I will calculate the D20 values:
+    # This should actually be a generic....
+    dice_roll(randint(1,20))
+    d20 = int(dice_roll)
+    return d20
 
-dice_roll = (randint(1,20))
-d20 = int(dice_roll)
-
-# while True
-# need a while loop here to cycle through the battle
-
-
+def break_words(stuff):
+    """see if this imports properly"""
+    words = stuff.split(' ')
+    return words
 
 def fight_dragon():
-# This is how I will calculate the D20 values:
-
+# This is how I will calcudice_roll = (randint(1,20))
+    dice_roll = (randint(1,20))
+    d20 = int(dice_roll)
     print "You rolled %d "% dice_roll
 # Start the dragon with no damage
     dragon_damage = 0
@@ -67,7 +68,3 @@ def fight_dragon():
         print "That isn't supposed to happen... You find a glorkum.s"
         exit(0)
 #
-
-
-while True:
-    fight_dragon()
