@@ -1,5 +1,16 @@
 from random import randint
 
+
+def first_room():
+    print "You enter the room... exits are North"
+    while True:
+        user_input = raw_input("> ")
+
+        if user_input == "North":
+            fight_dragon()
+        else:
+            print "lets get the hell out of here!"
+
 def fight_monster(dice_roll):
     """This function is for a fight with a monster - it is D20 based"""
     # This is how I will calculate the D20 values:
