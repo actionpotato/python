@@ -7,7 +7,8 @@ def fight_monster():
     dice_roll = (randint(1,20))
     d20 = int(dice_roll)
 
-    print "This is the result: %d" % d20
+    print "Inside the function, this is the result: %d" % d20
     return d20
 
-fight_monster()
+
+print "Outside the function the result is %d" % fight_monster()
