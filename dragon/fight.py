@@ -60,15 +60,18 @@ def fight_monster(dice_roll):
 def fight_dragon():
 # This is how I will calcudice_roll = (randint(1,20))
 
-    dice_roll = (randint(1,20))
-    d20 = int(dice_roll)
-    fight_monster(dice_roll)
-    print "You rolled %d "% dice_roll
-
-# Start the dragon with no damage
     dragon_damage = 0
+# Start the dragon with no damage
+
 
     while dragon_damage <= 7:
+
+        dice_roll = (randint(1,20))
+        d20 = int(dice_roll)
+        fight_monster(dice_roll)
+        print "You rolled %d "% dice_roll
+        print "Dragon Damage is %d" % dragon_damage
+
         if d20 == 1:
             print "CRITICAL FAILURE! Talk about whiffing it!"
             time.sleep(1)
