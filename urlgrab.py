@@ -12,8 +12,7 @@
 ###########################################################
 import urllib
 
-# Change link to 192.168.1.100 when printer is up.
-link = "https://www.google.com"
+link = "http://192.168.1.101"
 
 file_in = urllib.urlopen(link)
 myfile = file_in.read()

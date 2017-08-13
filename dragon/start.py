@@ -8,5 +8,6 @@ from fight import first_room
 from fight import first_view
 from fight import fight_monster
 
+
 while True:
     first_view()

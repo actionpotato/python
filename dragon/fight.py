@@ -3,6 +3,7 @@ from sys import exit
 import time
 import os
 
+
 def first_view():
     """This is the first area that the user encounters."""
     os.system('clear')
@@ -49,27 +50,28 @@ def first_room():
             print "Command not understood."
             first_room()
 
-def fight_monster(dice_roll):
-    """This function is for a fight with a monster - it is D20 based"""
-    # This is how I will calculate the D20 values:
-    # This should actually be a generic....
-    # dice_roll(randint(1,20))
-    # d20 = int(dice_roll)
-    # return d20
 
-def fight_dragon():
-# This is how I will calcudice_roll = (randint(1,20))
-
-    dragon_damage = 0
-# Start the dragon with no damage
-
-
-    while dragon_damage <= 7:
-
+def fight_monster():
+        """This function is for a fight with a monster - it is D20 based"""
         dice_roll = (randint(1,20))
         d20 = int(dice_roll)
-        fight_monster(dice_roll)
-        print "You rolled %d "% dice_roll
+
+        return d20
+
+
+def fight_dragon(d20):
+
+# This is how I will calcudice_roll = (randint(1,20))
+#    dragon_damage = 0
+# Start the dragon with no damage
+    dragon_damage = 0
+    while dragon_damage <= 7:
+
+    #    dice_roll = (randint(1,20))
+    #    d20 = int(dice_roll)
+    #    fight_monster(dice_roll)
+
+        print "You rolled %d "% d20
         print "Dragon Damage is %d" % dragon_damage
 
         if d20 == 1:
@@ -85,28 +87,28 @@ def fight_dragon():
             time.sleep(1)
             print "Dragon Damage is %d" % dragon_damage
             dragon_damage = dragon_damage
-            fight_dragon()
+            fight_dragon(d20)
 
         if d20 < 10:
             print "you missed, but barely stay upright."
             time.sleep(1)
             dragon_damage = dragon_damage
             print "Dragon Damage is %d" % dragon_damage
-            fight_dragon()
+            fight_dragon(d20)
 
         if d20 <= 15:
             print "Hit! you do damage!"
             time.sleep(1)
             dragon_damage = dragon_damage + 1
             print "Dragon Damage is %d" % dragon_damage
-            fight_dragon()
+            fight_dragon(d20)
 
         if d20 <= 18:
             print "You hit HARD!"
             time.sleep(1)
             dragon_damage = dragon_damage + 3
             print "Dragon Damage is %d" % dragon_damage
-            fight_dragon()
+            fight_dragon(d20)
 
         if d20 == 20:
             print "Natural 20? instant kill!!!"
@@ -118,3 +120,5 @@ def fight_dragon():
         else:
             print "That isn't supposed to happen... You find a glorkum.s"
             exit(0)
+
+        return 0
