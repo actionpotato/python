@@ -1,0 +1,4 @@
+
+ 
+import urllib2 import json # PUT YOUR API KEY FROM WUNDERGROUND HERE (You need to register for a free account) api_key = "" # PUT YOUR STATE HERE (eg: "CA") state = "" # PUT YOUR CITY HERE (eg: "Anaheim") city_value = "" f = urllib2.urlopen("http://api.wunderground.com/api/%s/geolookup/conditions/q/%s/%s.json" % (api_key, state, city_value)) json_string = f.read() parsed_json = json.loads(json_string) location = parsed_json['location']['city'] precipitation = parsed_json['current_observation']['precip_1hr_metric'] print "Current precipitation in %s is: %s" % (location, precipitation) isinstance( precipitation, ( int, long ) ) if precipitation > 2: print ("Rain is above 2mm, turning off IR.") else: print ("Rain is below 2mm, ensure IR is on.") f.close()
+ 
