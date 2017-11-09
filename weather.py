@@ -24,6 +24,7 @@ print "Current precipitation in %s is: %s" % (location, precipitation)
 # isinstance is generally bad, like goto, to try to avoid using if at all possible.
 #isinstance( precipitation, ( int, long ) )
 
+# Ensure that the value of precipitation is float
 float(precipitation)
 
 if precipitation < 2.00:
